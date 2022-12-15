@@ -1,0 +1,23 @@
+apiVersion: secrets-store.csi.x-k8s.io/v1
+kind: SecretProviderClass
+metadata:
+  name: aws-secrets
+spec:
+  provider: aws
+  secretObjects:
+  - secretName: thinkbox-ubl
+    type: Opaque
+    data:
+    - key: FNO_SERVER
+      objectName: FNO_SERVER
+    - key: FNO_PASSWORD
+      objectName: FNO_PASSWORD
+  parameters:
+    objects: |
+      - objectName: "thinkbox-ubl"
+        objectType: "secretsmanager"
+        jmesPath:
+        - path: FNO_PASSWORD
+          objectAlias: FNO_PASSWORD
+        - path: FNO_SERVER
+          objectAlias: FNO_SERVER
