@@ -2,6 +2,9 @@ apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
   name: ubl-tracker
+  labels:
+    monitoring: thinkbox
+    release: kube-prometheus-stack
 spec:
   endpoints:
   - port: http

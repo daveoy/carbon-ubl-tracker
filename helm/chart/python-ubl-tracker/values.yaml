@@ -3,7 +3,8 @@
 # Declare variables to be passed into your templates.
 
 replicaCount: 1
-
+labels:
+  monitoring: thinkbox
 image:
   repository: docker.io/daveoy/python-ubl-tracker
   pullPolicy: Always
