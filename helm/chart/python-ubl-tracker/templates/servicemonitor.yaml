@@ -8,6 +8,7 @@ metadata:
 spec:
   endpoints:
   - port: http
+    interval: 30s
   selector:
     matchLabels:
       app.kubernetes.io/instance: python-ubl-tracker
