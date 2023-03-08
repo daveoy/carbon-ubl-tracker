@@ -34,11 +34,20 @@ spec:
             readOnly: true
             volumeAttributes:
               secretProviderClass: "python-ubl-tracker"
+        - name: secrets-store-inline-creds
+          csi:
+            driver: secrets-store.csi.k8s.io
+            readOnly: true
+            volumeAttributes:
+              secretProviderClass: "regcred"
       containers:
         - name: {{ .Chart.Name }}
           volumeMounts:
           - name: secrets-store-inline
             mountPath: "/mnt/secrets-store"
+            readOnly: true
+          - name: secrets-store-inline-creds
+            mountPath: "/mnt/secrets-store-creds"
             readOnly: true
           env:
           - name: FNO_PASSWORD

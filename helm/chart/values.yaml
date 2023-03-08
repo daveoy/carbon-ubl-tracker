@@ -11,7 +11,8 @@ image:
   # Overrides the image tag whose default is the chart appVersion.
   tag: "registry.eks.carbonvfx.com/engineering/python-ubl-tracker:latest"
 
-imagePullSecrets: []
+imagePullSecrets:
+  - name: regcred
 nameOverride: ""
 fullnameOverride: ""
 

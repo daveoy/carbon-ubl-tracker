@@ -21,3 +21,21 @@ spec:
           objectAlias: FNO_PASSWORD
         - path: FNO_SERVER
           objectAlias: FNO_SERVER
+---
+apiVersion: secrets-store.csi.x-k8s.io/v1
+kind: SecretProviderClass
+metadata:
+  name: regcred
+spec:
+  parameters:
+    objects: |
+      - objectName: "regcred"
+        objectType: "secretsmanager"
+    region: us-east-2
+  provider: aws
+  secretObjects:
+  - secretName: regcred
+    type: kubernetes.io/dockerconfigjson
+    data:
+    - key: .dockerconfigjson
+      objectName: regcred
