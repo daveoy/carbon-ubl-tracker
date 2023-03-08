@@ -11,5 +11,4 @@ spec:
     interval: 30s
   selector:
     matchLabels:
-      app.kubernetes.io/instance: python-ubl-tracker
-      app.kubernetes.io/name: python-ubl-tracker
+      monitoring: thinkbox
