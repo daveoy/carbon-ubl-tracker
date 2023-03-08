@@ -5,6 +5,7 @@
 replicaCount: 1
 labels:
   monitoring: thinkbox
+  release: monitoring-kube-prometheus-stack
 image:
   repository: docker.io/daveoy/python-ubl-tracker
   pullPolicy: Always

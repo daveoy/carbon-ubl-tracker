@@ -3,6 +3,8 @@ kind: Service
 metadata:
   name: {{ include "python-ubl-tracker.fullname" . }}
   labels:
+    monitoring: thinkbox
+    release: monitoring-kube-prometheus-stack
     {{- include "python-ubl-tracker.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
